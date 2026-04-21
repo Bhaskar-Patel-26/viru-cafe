@@ -1,0 +1,101 @@
+{
+  "categories": ["All", "Coffee", "Food", "Dessert", "Snacks"],
+  "items": [
+    {
+      "id": 1,
+      "category": "Coffee",
+      "name": "Iced Cold Coffee",
+      "price": 120,
+      "img": "https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&q=80&w=800",
+      "desc": "Rich, creamy coffee served chilled with a hint of chocolate."
+    },
+    {
+      "id": 2,
+      "category": "Food",
+      "name": "Classic Veg Burger",
+      "price": 80,
+      "img": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&q=80&w=800",
+      "desc": "Juicy patty with fresh lettuce, tomatoes, and house-made sauce."
+    },
+    {
+      "id": 3,
+      "category": "Food",
+      "name": "Pepperoni Pizza",
+      "price": 150,
+      "img": "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&q=80&w=800",
+      "desc": "Wood-fired crust topped with spicy pepperoni and mozzarella."
+    },
+    {
+      "id": 4,
+      "category": "Dessert",
+      "name": "Nutella Waffle",
+      "price": 180,
+      "img": "https://images.unsplash.com/photo-1562376552-0d160a2f238d?auto=format&fit=crop&q=80&w=800",
+      "desc": "Crispy waffle smothered in Nutella and topping with berries."
+    },
+    {
+      "id": 5,
+      "category": "Snacks",
+      "name": "Classic Club Sandwich",
+      "price": 110,
+      "img": "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&q=80&w=800",
+      "desc": "Triple-decker sandwich with fresh veggies and toasted bread."
+    },
+    {
+      "id": 6,
+      "category": "Food",
+      "name": "Creamy White Pasta",
+      "price": 140,
+      "img": "https://images.unsplash.com/photo-1473093226795-af9932fe5856?auto=format&fit=crop&q=80&w=800",
+      "desc": "Penne pasta in a rich, creamy Alfredo sauce."
+    },
+    {
+      "id": 7,
+      "category": "Coffee",
+      "name": "Hot Cappuccino",
+      "price": 100,
+      "img": "https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&q=80&w=800",
+      "desc": "Authentic Italian style coffee with steamed milk foam."
+    },
+    {
+      "id": 8,
+      "category": "Coffee",
+      "name": "Caramel Macchiato",
+      "price": 150,
+      "img": "https://images.unsplash.com/photo-1485808191679-5f86510681a2?auto=format&fit=crop&q=80&w=800",
+      "desc": "Sweet and velvety with a rich caramel drizzle."
+    },
+    {
+      "id": 9,
+      "category": "Food",
+      "name": "Paneer Tikka Pizza",
+      "price": 170,
+      "img": "https://images.unsplash.com/photo-1511306361225-d703df9e49a4?auto=format&fit=crop&q=80&w=800",
+      "desc": "Fusion pizza topped with marinated paneer and Indian spices."
+    },
+    {
+      "id": 10,
+      "category": "Dessert",
+      "name": "Chocolate Lava Cake",
+      "price": 130,
+      "img": "https://images.unsplash.com/photo-1624353365286-3f8d62daad51?auto=format&fit=crop&q=80&w=800",
+      "desc": "Warm chocolate cake with a molten chocolate center."
+    },
+    {
+      "id": 11,
+      "category": "Snacks",
+      "name": "French Fries",
+      "price": 70,
+      "img": "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&q=80&w=800",
+      "desc": "Golden and crispy fries served with house dip."
+    },
+    {
+      "id": 12,
+      "category": "Snacks",
+      "name": "Peri Peri Wings",
+      "price": 160,
+      "img": "https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&q=80&w=800",
+      "desc": "Spicy chicken wings seasoned with fiery peri-peri spices."
+    }
+  ]
+}
