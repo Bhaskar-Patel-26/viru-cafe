@@ -8,7 +8,9 @@ import useFadeIn from '@/hooks/useFadeIn';
 export default function MenuPage() {
   const [activeCategory, setActiveCategory] = useState('All');
   const { addToCart, updateQuantity, getItemQuantity } = useCart();
-  useFadeIn();
+  
+  // Re-run the fade-in observer whenever the category changes
+  useFadeIn([activeCategory]);
 
   const filteredItems = activeCategory === 'All' 
     ? menuData.items 

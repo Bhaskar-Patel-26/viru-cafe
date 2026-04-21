@@ -323,7 +323,7 @@ body {
   background: transparent;
   border: 1.5px solid var(--neon);
   border-radius: 50px;
-  padding: 133px 26px;
+  padding: 13px 26px;
   cursor: pointer;
   text-decoration: none;
   min-width: 170px;
@@ -728,6 +728,22 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 8px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .gal-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .gal-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+  }
 }
 
 .gi {
@@ -811,7 +827,7 @@ body {
   position: absolute;
   top: 14px;
   right: 14px;
-  background: rgba(200, 1121, 65, .12);
+  background: rgba(200, 121, 65, .12);
   border: 1px solid rgba(200, 121, 65, .25);
   border-radius: 10px;
   padding: 6px 12px;
@@ -1142,21 +1158,17 @@ body {
 /* ── CART SYSTEM ── */
 .cart-bar {
   position: fixed;
-  bottom: 26px;
-  left: 18px; /* On the left side to balance WA on the right? User said "right side of wp btn and long as width" */
-  /* User said: "cart icon ... it should be right side of wp btn" */
-  /* But WP is already on the right. If I put it to the right of WP, it goes off screen. */
-  /* User probably meant: "The WA button is on the right, the cart bar should be next to it, making the total UI long". */
-  /* A better Zomato style is a wide bar that stretches across the screen. */
-  right: 88px; /* Leave space for WA button on the right */
-  height: 54px;
+  bottom: 20px;
+  left: 14px;
+  right: 86px;
+  height: 48px;
   background: var(--neon);
   z-index: 500;
-  border-radius: 12px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
+  padding: 0 16px;
   box-shadow: 0 8px 30px rgba(0, 180, 255, 0.4);
   border: none;
   cursor: pointer;
@@ -1388,4 +1400,239 @@ body {
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 25px;
   }
+}
+
+/* ── TESTIMONIALS ── */
+.testi-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.testi-grid {
+  display: flex;
+  gap: 1.2rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 10px 0;
+  width: 100%;
+}
+
+.testi-grid::-webkit-scrollbar {
+  display: none;
+}
+
+.testi-card {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  background: linear-gradient(135deg, var(--dark3), #1a1510);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 1.8rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .testi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    overflow-x: visible;
+    scroll-snap-type: none;
+  }
+  
+  .testi-card {
+    flex: none;
+    scroll-snap-align: none;
+  }
+  
+  .testi-btn {
+    display: none !important;
+  }
+}
+
+.testi-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(200, 121, 65, 0.1);
+  border: 1px solid rgba(200, 121, 65, 0.3);
+  color: var(--coffee);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+
+.testi-btn:hover {
+  background: var(--coffee);
+  color: #fff;
+}
+
+.testi-stars {
+  color: var(--coffee);
+  letter-spacing: 2px;
+  font-size: 14px;
+  margin-bottom: 1rem;
+}
+
+.testi-text {
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+
+.testi-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.testi-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--dark2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--neon);
+  border: 1px solid var(--border);
+}
+
+.testi-name {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.testi-role {
+  font-size: 11px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ── LIGHTBOX ── */
+.lb-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.4rem;
+  animation: fadeIn 0.3s ease;
+}
+
+.lb-content {
+  position: relative;
+  max-width: 900px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lb-img {
+  width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  animation: scaleUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes scaleUp {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.lb-close {
+  position: absolute;
+  top: -50px;
+  right: 0;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 2.5rem;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.lb-close:hover { opacity: 1; }
+
+.lb-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+  pointer-events: none;
+}
+
+.lb-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: all 0.3s;
+}
+
+.lb-btn:hover {
+  background: var(--neon);
+  border-color: var(--neon);
+  box-shadow: 0 0 20px rgba(0, 180, 255, 0.4);
+}
+
+.lb-controls {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.lb-play {
+  background: var(--dark3);
+  border: 1px solid var(--border);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.lb-play.active {
+  background: var(--coffee);
+  border-color: var(--coffee);
+}
+
+.lb-counter {
+  font-size: 14px;
+  color: var(--muted);
+  font-weight: 500;
 }

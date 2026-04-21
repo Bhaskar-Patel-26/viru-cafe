@@ -49,11 +49,11 @@ export const CartProvider = ({ children }) => {
 
   const generateWhatsAppLink = () => {
     const phone = "917000485141";
-    let message = `*New Order from Viru Cafe*\n\n`;
+    let message = `*I want to order...*\n\n`;
     cart.forEach((item) => {
       message += `• ${item.name} x${item.quantity} - ₹${item.price * item.quantity}\n`;
     });
-    message += `\n*Total: ₹${totalPrice}*\n\nThank you!`;
+    message += `\n*Total: ₹${totalPrice}*\n`;
     return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
   };
 

@@ -8,6 +8,7 @@ import Features from "@/components/Features";
 import Menu from "@/components/Menu";
 import Gallery from "@/components/Gallery";
 import About from "@/components/About";
+import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import useFadeIn from "@/hooks/useFadeIn";
 
@@ -24,6 +25,7 @@ export default function Home() {
       <Menu />
       <Gallery />
       <About />
+      <Testimonials />
       <Contact />
     </>
   );

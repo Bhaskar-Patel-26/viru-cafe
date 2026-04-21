@@ -21,7 +21,7 @@ export default function Hero() {
         <p className="hero-tag">Fresh Coffee <span>•</span> Tasty Food <span>•</span> Great Vibes</p>
         <div className="btn-row">
           <a
-            href="https://wa.me/917000485141?text=Hi! I want to place an order 🍵"
+            href="https://wa.me/917000485141?text=Hi! I want to place an order..."
             target="_blank"
             rel="noopener noreferrer"
             className="btn-wa"
