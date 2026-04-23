@@ -7,6 +7,7 @@ const CartContext = createContext();
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [tableNumber, setTableNumber] = useState(null);
 
   const addToCart = (item) => {
     setCart((prev) => {
@@ -49,7 +50,7 @@ export const CartProvider = ({ children }) => {
 
   const generateWhatsAppLink = () => {
     const phone = "917000485141";
-    let message = `*I want to order...*\n\n`;
+    let message = `*I want to order on table Number ${tableNumber}*\n\n`;
     cart.forEach((item) => {
       message += `• ${item.name} x${item.quantity} - ₹${item.price * item.quantity}\n`;
     });
@@ -71,6 +72,8 @@ export const CartProvider = ({ children }) => {
         generateWhatsAppLink,
         isCartOpen,
         setIsCartOpen,
+        tableNumber,
+        setTableNumber,
       }}
     >
       {children}

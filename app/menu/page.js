@@ -1,14 +1,23 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { useCart } from '@/context/CartContext';
 import menuData from '@/data/menu.json';
 import useFadeIn from '@/hooks/useFadeIn';
 
-export default function MenuPage() {
+function MenuContent() {
   const [activeCategory, setActiveCategory] = useState('All');
-  const { addToCart, updateQuantity, getItemQuantity } = useCart();
+  const { addToCart, updateQuantity, getItemQuantity, setTableNumber } = useCart();
+  const searchParams = useSearchParams();
   
+  useEffect(() => {
+    const table = searchParams.get('table');
+    if (table) {
+      setTableNumber(table);
+    }
+  }, [searchParams, setTableNumber]);
+
   // Re-run the fade-in observer whenever the category changes
   useFadeIn([activeCategory]);
 
@@ -71,5 +80,13 @@ export default function MenuPage() {
         })}
       </div>
     </div>
+  );
+}
+
+export default function MenuPage() {
+  return (
+    <Suspense fallback={<div className="loading">Loading Menu...</div>}>
+      <MenuContent />
+    </Suspense>
   );
 }
